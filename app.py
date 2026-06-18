@@ -10,6 +10,9 @@ from flask import send_file
 
 app = Flask(__name__)
 
+os.makedirs("uploads", exist_ok=True)
+os.makedirs("outputs", exist_ok=True)
+
 @app.route("/")
 def home():
     return render_template(
@@ -101,6 +104,9 @@ def download():
 
         for file in os.listdir("outputs"):
             os.remove(os.path.join("outputs", file))
+
+        if os.path.exists("converted_images.zip"):
+            os.remove("converted_images.zip")
 
         return response
 
