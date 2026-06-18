@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: aqua; */
+}
+
+body{
+    background-color: aqua;
+}
+.header{
+    /* background-color: aliceblue; */
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: bolder;
+    display: flex;
+    color: red;
+    justify-content: center;
+}
+
+.wbs{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.upload-btn{
+    display: block;
+    margin: 70px auto;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Convert:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.Convert{
+    width: 180px;
+    height: 60px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.status{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: green;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #222;
+}
+
+.footer-content{
+    background-color: #222;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.drop-zone{
+    width: 60%;
+    margin: 40px auto;
+    padding: 60px 20px;
+    border: 3px dashed #555;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+.drop-zone:hover{
+    border-color: blue;
+}
+
+.drop-zone.dragover{
+    border-color: green;
+}

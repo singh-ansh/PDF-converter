@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF</title>
+    <meta name="description" content="PDF">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="header">PDF CONVERTER</h1>
+    </header>
+
+    <main>
+        <br><br>
+        <div class="wbs">Upload the File you want to convert in .JPEG</div>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="drop-zone" id="drop-zone">
+                <p id="file-text">📄 Drag & Drop PDF Here<br>
+                    or Click to Select File</p>
+
+                <input type="file" name="pdf_file" id="file-input" hidden>
+            </div>
+
+            <div class="btn-container">
+                <button class="Convert" id="convert-btn">Convert</button>
+            </div>
+
+            <div class="status" id="status">
+                {{ status if status else "No file selected" }}
+            </div>
+
+            {% if uploaded_file %}
+            <div class="status">
+                Selected File: {{ uploaded_file }}
+            </div>
+            {% endif %}<br><br>
+
+            {% if filename %}
+
+            <div class="btn-container">
+                <a href="/download">
+                    <button type="button" id="convert-btn" class="Convert">
+                        Download
+                    </button>
+                </a>
+            </div>
+
+            {% endif %}
+
+        </form>
+
+
+
+
+    </main>
+
+    <footer>
+
+        <footer>
+            <div class="footer-content">
+                © 2026 PDF Converter | Fast & Free PDF Tools
+            </div>
+        </footer>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='pdf.js') }}"></script>
+</body>
+
+</html>
