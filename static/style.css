@@ -7,7 +7,16 @@
 
 body{
     background-color: aqua;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+main{
+    flex: 1;
+}
+
+
 .header{
     /* background-color: aliceblue; */
     font-size: clamp(2rem, 6vw, 5rem);
